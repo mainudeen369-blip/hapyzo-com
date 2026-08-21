@@ -51,7 +51,7 @@ export function SiteFooter() {
         <p>© {new Date().getFullYear()} Hapyzo Technologies. All rights reserved.</p>
         <nav>
           <Link href="/speaklo">Speaklo</Link>
-          <a href="https://propertymanager.hapyzo.com" target="_blank" rel="noreferrer">
+          <a href="https://propertymanager.hapyzo.com/" target="_blank" rel="noreferrer">
             Property Manager
           </a>
           <a href="mailto:hapyzotechnologies@gmail.com">Email</a>

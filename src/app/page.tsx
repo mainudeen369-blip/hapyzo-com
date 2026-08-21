@@ -27,7 +27,7 @@ const products = [
     tag: "SaaS",
     title: "Property Manager",
     body: "Our own product for hostels, hotels, and apartments — rent, rooms, receipts, SMS, and live occupancy dashboards.",
-    href: "https://propertymanager.hapyzo.com",
+    href: "https://propertymanager.hapyzo.com/",
     cta: "Open Property Manager",
   },
   {
@@ -112,9 +112,6 @@ export default function HomePage() {
                 </Link>
                 <Link href="/#products" className="btn btn-ghost">
                   See products
-                </Link>
-                <Link href="/speaklo" className="btn btn-gold">
-                  Speaklo payments
                 </Link>
               </div>
               <div className="hero-meta">
@@ -233,7 +230,7 @@ export default function HomePage() {
                   </p>
                   <div className="hero-actions" style={{ marginBottom: 0 }}>
                     <a
-                      href="https://propertymanager.hapyzo.com"
+                      href="https://propertymanager.hapyzo.com/"
                       className="btn btn-primary"
                       target="_blank"
                       rel="noreferrer"
@@ -292,10 +289,10 @@ export default function HomePage() {
                     <a className="line" href="tel:+918610159248">
                       +91 86101 59248
                     </a>
-                    <p style={{ margin: "1.1rem 0 0.35rem", color: "var(--muted)", fontSize: "0.85rem" }}>Speaklo payments</p>
-                    <Link className="line" href="/speaklo">
-                      hapyzo.com/speaklo
-                    </Link>
+                    <p style={{ margin: "1.1rem 0 0.35rem", color: "var(--muted)", fontSize: "0.85rem" }}>Property Manager</p>
+                    <a className="line" href="https://propertymanager.hapyzo.com/" target="_blank" rel="noreferrer">
+                      propertymanager.hapyzo.com
+                    </a>
                   </div>
                 </div>
               </div>
