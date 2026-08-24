@@ -1,8 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { BrandLogo } from "./BrandLogo";
 
 const links = [
   { href: "/#services", label: "Services" },
@@ -25,9 +25,12 @@ export function SiteHeader() {
   return (
     <header className={`header ${scrolled ? "is-scrolled" : ""}`}>
       <div className="container nav">
-        <Link href="/" className="brand">
-          <Image src="/logo.svg" alt="Hapyzo" width={36} height={36} priority />
-          Hapyzo
+        <Link href="/" className="brand" aria-label="Hapyzo Technologies home">
+          <BrandLogo variant="icon" size="md" priority />
+          <span className="brand-copy">
+            <span className="brand-name">Hapyzo</span>
+            <span className="brand-sub">Technologies</span>
+          </span>
         </Link>
         <ul className="nav-links">
           {links.map((item) => (
@@ -48,7 +51,10 @@ export function SiteFooter() {
   return (
     <footer className="footer">
       <div className="container footer-row">
-        <p>© {new Date().getFullYear()} Hapyzo Technologies. All rights reserved.</p>
+        <div className="footer-brand">
+          <BrandLogo variant="icon" size="sm" />
+          <p>© {new Date().getFullYear()} Hapyzo Technologies. All rights reserved.</p>
+        </div>
         <nav>
           <Link href="/speaklo">Speaklo</Link>
           <a href="https://propertymanager.hapyzo.com/" target="_blank" rel="noreferrer">

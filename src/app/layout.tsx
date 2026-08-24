@@ -61,7 +61,8 @@ export const metadata: Metadata = {
       "Websites, mobile apps, and SaaS products built by Hapyzo Technologies.",
   },
   icons: {
-    icon: "/logo.svg",
+    icon: [{ url: "/Logo/hapyzo-icon.svg", type: "image/svg+xml" }],
+    apple: "/Logo/hapyzo-icon-white.svg",
   },
 };
 

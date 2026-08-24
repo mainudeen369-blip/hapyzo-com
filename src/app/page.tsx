@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import { BrandLogo } from "../components/BrandLogo";
 import { Reveal } from "../components/Reveal";
 import { SiteFooter, SiteHeader } from "../components/SiteChrome";
 
@@ -249,8 +249,8 @@ export default function HomePage() {
                   </div>
                 </div>
                 <div className="spotlight-visual">
-                  <div className="mark">
-                    <Image src="/logo.svg" alt="" width={96} height={96} />
+                  <div className="mark mark--logo">
+                    <BrandLogo variant="icon" size="hero" />
                   </div>
                 </div>
               </div>
