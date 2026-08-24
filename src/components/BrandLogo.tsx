@@ -2,34 +2,33 @@ import Image from "next/image";
 
 type BrandLogoProps = {
   variant?: "icon" | "lockup";
+  tone?: "light" | "dark";
   size?: "sm" | "md" | "lg" | "hero";
   className?: string;
   priority?: boolean;
 };
 
-const sizes = {
-  sm: { icon: 28, lockupW: 140, lockupH: 35 },
-  md: { icon: 40, lockupW: 168, lockupH: 42 },
-  lg: { icon: 72, lockupW: 240, lockupH: 60 },
-  hero: { icon: 112, lockupW: 320, lockupH: 80 },
-} as const;
+const iconPx = { sm: 30, md: 44, lg: 72, hero: 120 } as const;
 
 export function BrandLogo({
-  variant = "icon",
+  variant = "lockup",
+  tone = "dark",
   size = "md",
   className = "",
   priority = false,
 }: BrandLogoProps) {
-  const dim = sizes[size];
+  const px = iconPx[size];
+  const iconSrc = "/Logo/hapyzo-icon.svg";
 
-  if (variant === "lockup") {
+  if (variant === "icon") {
     return (
-      <span className={`brand-logo brand-logo--lockup brand-logo--${size} ${className}`.trim()}>
+      <span className={`brand-logo brand-logo--icon brand-logo--${size} ${className}`.trim()}>
+        <span className="brand-logo__glow" aria-hidden />
         <Image
-          src="/Logo/hapyzo-logo-white.svg"
-          alt="Hapyzo Technologies"
-          width={dim.lockupW}
-          height={dim.lockupH}
+          src={iconSrc}
+          alt="Hapyzo"
+          width={px}
+          height={px}
           priority={priority}
           className="brand-logo__img"
         />
@@ -38,16 +37,23 @@ export function BrandLogo({
   }
 
   return (
-    <span className={`brand-logo brand-logo--icon brand-logo--${size} ${className}`.trim()}>
+    <span
+      className={`brand-logo brand-logo--lockup brand-logo--${size} brand-logo--${tone} ${className}`.trim()}
+    >
       <span className="brand-logo__glow" aria-hidden />
       <Image
-        src="/Logo/hapyzo-icon.svg"
-        alt="Hapyzo"
-        width={dim.icon}
-        height={dim.icon}
+        src={iconSrc}
+        alt=""
+        width={px}
+        height={px}
         priority={priority}
-        className="brand-logo__img"
+        className="brand-logo__mark"
+        aria-hidden
       />
+      <span className="brand-logo__wordmark">
+        <span className="brand-logo__name">Hapyzo</span>
+        <span className="brand-logo__tag">Technologies</span>
+      </span>
     </span>
   );
 }

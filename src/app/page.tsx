@@ -249,8 +249,8 @@ export default function HomePage() {
                   </div>
                 </div>
                 <div className="spotlight-visual">
-                  <div className="mark mark--logo">
-                    <BrandLogo variant="icon" size="hero" />
+                  <div className="mark mark--logo mark--lockup">
+                    <BrandLogo variant="lockup" tone="dark" size="lg" />
                   </div>
                 </div>
               </div>

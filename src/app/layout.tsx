@@ -62,7 +62,7 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [{ url: "/Logo/hapyzo-icon.svg", type: "image/svg+xml" }],
-    apple: "/Logo/hapyzo-icon-white.svg",
+    apple: "/Logo/hapyzo-logo-original.png",
   },
 };
 

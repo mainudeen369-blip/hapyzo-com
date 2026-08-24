@@ -26,11 +26,7 @@ export function SiteHeader() {
     <header className={`header ${scrolled ? "is-scrolled" : ""}`}>
       <div className="container nav">
         <Link href="/" className="brand" aria-label="Hapyzo Technologies home">
-          <BrandLogo variant="icon" size="md" priority />
-          <span className="brand-copy">
-            <span className="brand-name">Hapyzo</span>
-            <span className="brand-sub">Technologies</span>
-          </span>
+          <BrandLogo variant="lockup" tone="dark" size="md" priority />
         </Link>
         <ul className="nav-links">
           {links.map((item) => (
@@ -52,7 +48,7 @@ export function SiteFooter() {
     <footer className="footer">
       <div className="container footer-row">
         <div className="footer-brand">
-          <BrandLogo variant="icon" size="sm" />
+          <BrandLogo variant="lockup" tone="dark" size="sm" />
           <p>© {new Date().getFullYear()} Hapyzo Technologies. All rights reserved.</p>
         </div>
         <nav>

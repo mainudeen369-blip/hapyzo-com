@@ -1,33 +1,17 @@
 HAPYZO TECHNOLOGIES — LOGO PACKAGE
 ====================================
 
-Primary:
-  hapyzo-logo.svg
+Source of truth (your GPT export):
+  hapyzoLogopng.png / hapyzo-logo-original.png
 
-Dark-background / reversed:
-  hapyzo-logo-white.svg
+Website uses:
+  hapyzo-icon.svg          — mark with blue→violet gradient (header/favicon)
+  BrandLogo React lockup   — mark + crisp white “Hapyzo / TECHNOLOGIES” for dark UI
 
-Monochrome:
-  hapyzo-logo-black.svg
+Optional raster lockups:
+  hapyzo-logo-on-dark.png  — full lockup for dark backgrounds
+  hapyzo-logo.png          — full lockup for light backgrounds
 
-Compact mark:
-  hapyzo-icon.svg
-  hapyzo-icon-white.svg
-  hapyzo-icon-black.svg
-
-Recommended brand colors:
-  Navy:  #0B1638
-  Blue:  #2563EB
-  White: #FFFFFF
-  Ink:   #111111
-
-Usage:
-- Prefer the primary SVG on light backgrounds.
-- Use the white version on dark backgrounds.
-- Use the icon alone for favicon, app icon, avatar and very small spaces.
-- Keep the logo proportional; do not stretch, rotate, add shadows or outlines.
-- Keep clear space around the logo roughly equal to the height of the H icon.
-- For website/app code, use SVG directly. It scales cleanly and stays sharp at any resolution.
-
-Note:
-The wordmark is converted to vector outlines for consistent rendering. TECHNOLOGIES remains editable SVG text.
+Why SVG package looked different:
+  Auto-traced SVGs flattened the gradient and changed the mark/type.
+  Site now rebuilds the polished lockup from the icon + live typography.
