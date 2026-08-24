@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Syne, Sora } from "next/font/google";
+import { Syne, Sora, Montserrat } from "next/font/google";
 import "./globals.css";
 
 const syne = Syne({
@@ -11,6 +11,13 @@ const syne = Syne({
 const sora = Sora({
   subsets: ["latin"],
   variable: "--font-sora",
+  display: "swap",
+});
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["600", "700", "800"],
+  variable: "--font-brand",
   display: "swap",
 });
 
@@ -73,7 +80,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${syne.variable} ${sora.variable}`}>
+      <body className={`${syne.variable} ${sora.variable} ${montserrat.variable}`}>
         <div className="site-bg" aria-hidden />
         <div className="site-grid" aria-hidden />
         <div className="noise" aria-hidden />

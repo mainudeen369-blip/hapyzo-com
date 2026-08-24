@@ -8,7 +8,12 @@ type BrandLogoProps = {
   priority?: boolean;
 };
 
-const iconPx = { sm: 30, md: 44, lg: 72, hero: 110 } as const;
+const sizes = {
+  sm: { icon: 30, lockupW: 190, lockupH: 58 },
+  md: { icon: 44, lockupW: 240, lockupH: 74 },
+  lg: { icon: 72, lockupW: 320, lockupH: 98 },
+  hero: { icon: 110, lockupW: 400, lockupH: 122 },
+} as const;
 
 export function BrandLogo({
   variant = "lockup",
@@ -17,8 +22,25 @@ export function BrandLogo({
   className = "",
   priority = false,
 }: BrandLogoProps) {
-  const px = iconPx[size];
-  // Dark-site icon keeps the bright gradient mark readable on dark UI
+  const dim = sizes[size];
+
+  // Exact GPT logo lockup (font + mark) as transparent PNG
+  if (variant === "lockup" && tone === "dark") {
+    return (
+      <span className={`brand-logo brand-logo--png brand-logo--${size} ${className}`.trim()}>
+        <span className="brand-logo__glow" aria-hidden />
+        <Image
+          src="/Logo/hapyzo-logo-on-dark.png"
+          alt="Hapyzo Technologies"
+          width={dim.lockupW}
+          height={dim.lockupH}
+          priority={priority}
+          className="brand-logo__img"
+        />
+      </span>
+    );
+  }
+
   const iconSrc = tone === "dark" ? "/Logo/hapyzo-icon-on-dark.svg" : "/Logo/hapyzo-icon.svg";
 
   if (variant === "icon") {
@@ -28,8 +50,8 @@ export function BrandLogo({
         <Image
           src={iconSrc}
           alt="Hapyzo"
-          width={px}
-          height={px}
+          width={dim.icon}
+          height={dim.icon}
           priority={priority}
           className="brand-logo__img"
         />
@@ -37,7 +59,7 @@ export function BrandLogo({
     );
   }
 
-  // Lockup = mark + crisp white wordmark (no PNG plate / no white box)
+  // Light-tone fallback lockup (Montserrat ≈ logo font)
   return (
     <span
       className={`brand-logo brand-logo--lockup brand-logo--${size} brand-logo--${tone} ${className}`.trim()}
@@ -46,8 +68,8 @@ export function BrandLogo({
       <Image
         src={iconSrc}
         alt=""
-        width={px}
-        height={px}
+        width={dim.icon}
+        height={dim.icon}
         priority={priority}
         className="brand-logo__mark"
         aria-hidden
