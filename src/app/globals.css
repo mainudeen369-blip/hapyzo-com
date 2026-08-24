@@ -130,18 +130,6 @@ img {
   filter: drop-shadow(0 0 18px rgba(59, 130, 246, 0.28));
 }
 
-.brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  transition: transform 0.25s ease, filter 0.25s ease;
-}
-
-.brand:hover {
-  transform: translateY(-1px);
-  filter: drop-shadow(0 0 18px rgba(59, 130, 246, 0.28));
-}
-
 .brand-logo {
   position: relative;
   display: inline-flex;
