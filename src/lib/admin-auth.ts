@@ -3,7 +3,9 @@ import { createHmac, timingSafeEqual } from "crypto";
 const COOKIE = "hapyzo_admin";
 
 export function getAdminPassword() {
-  return process.env.ADMIN_PASSWORD || "hapyzo@369147";
+  const raw = process.env.ADMIN_PASSWORD || "hapyzo@369147";
+  // Strip accidental quotes / CRLF from CLI env uploads
+  return raw.replace(/^["']|["']$/g, "").replace(/\\r\\n$/g, "").replace(/[\r\n]+$/g, "").trim();
 }
 
 function getSecret() {
