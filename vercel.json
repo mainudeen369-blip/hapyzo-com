@@ -1,13 +1,5 @@
 {
   "framework": "nextjs",
   "buildCommand": "npm run build",
-  "installCommand": "npm install",
-  "redirects": [
-    {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "www.hapyzo.com" }],
-      "destination": "https://hapyzo.com/:path*",
-      "permanent": true
-    }
-  ]
+  "installCommand": "npm install"
 }

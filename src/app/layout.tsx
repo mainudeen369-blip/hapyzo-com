@@ -15,7 +15,7 @@ const sora = Sora({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://hapyzo.com"),
+  metadataBase: new URL("https://www.hapyzo.com"),
   title: {
     default: "Hapyzo Technologies | Websites, Apps & SaaS Products",
     template: "%s | Hapyzo Technologies",
@@ -31,11 +31,11 @@ export const metadata: Metadata = {
     "Property Manager",
     "Speaklo",
   ],
-  authors: [{ name: "Hapyzo Technologies", url: "https://hapyzo.com" }],
+  authors: [{ name: "Hapyzo Technologies", url: "https://www.hapyzo.com" }],
   creator: "Hapyzo Technologies",
   publisher: "Hapyzo Technologies",
   alternates: {
-    canonical: "https://hapyzo.com",
+    canonical: "https://www.hapyzo.com",
   },
   robots: {
     index: true,
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     title: "Hapyzo Technologies | Websites, Apps & SaaS Products",
     description:
       "World-class digital products — websites, apps, and SaaS — built by Hapyzo Technologies.",
-    url: "https://hapyzo.com",
+    url: "https://www.hapyzo.com",
     siteName: "Hapyzo Technologies",
     type: "website",
     locale: "en_IN",

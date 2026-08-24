@@ -9,13 +9,13 @@ export const metadata: Metadata = {
   description:
     "Speaklo by Hapyzo Technologies: AI English speaking practice, live partner calls, lessons, and secure Razorpay payments for premium unlocks.",
   alternates: {
-    canonical: "https://hapyzo.com/speaklo",
+    canonical: "https://www.hapyzo.com/speaklo",
   },
   openGraph: {
     title: "Speaklo by Hapyzo Technologies",
     description:
       "Practice English with AI coaching and live calls. Premium features and in-app purchases via Razorpay.",
-    url: "https://hapyzo.com/speaklo",
+    url: "https://www.hapyzo.com/speaklo",
   },
 };
 
