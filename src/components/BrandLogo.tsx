@@ -8,7 +8,12 @@ type BrandLogoProps = {
   priority?: boolean;
 };
 
-const iconPx = { sm: 30, md: 44, lg: 72, hero: 120 } as const;
+const sizes = {
+  sm: { icon: 30, lockupW: 168, lockupH: 52 },
+  md: { icon: 44, lockupW: 220, lockupH: 68 },
+  lg: { icon: 72, lockupW: 300, lockupH: 92 },
+  hero: { icon: 120, lockupW: 380, lockupH: 118 },
+} as const;
 
 export function BrandLogo({
   variant = "lockup",
@@ -17,18 +22,20 @@ export function BrandLogo({
   className = "",
   priority = false,
 }: BrandLogoProps) {
-  const px = iconPx[size];
-  const iconSrc = "/Logo/hapyzo-icon.svg";
+  const dim = sizes[size];
 
-  if (variant === "icon") {
+  // Full lockup = exact PNG (matches your GPT logo)
+  if (variant === "lockup") {
+    const src =
+      tone === "dark" ? "/Logo/hapyzo-logo-on-dark.png" : "/Logo/hapyzo-logo.png";
     return (
-      <span className={`brand-logo brand-logo--icon brand-logo--${size} ${className}`.trim()}>
+      <span className={`brand-logo brand-logo--lockup brand-logo--${size} ${className}`.trim()}>
         <span className="brand-logo__glow" aria-hidden />
         <Image
-          src={iconSrc}
-          alt="Hapyzo"
-          width={px}
-          height={px}
+          src={src}
+          alt="Hapyzo Technologies"
+          width={dim.lockupW}
+          height={dim.lockupH}
           priority={priority}
           className="brand-logo__img"
         />
@@ -36,24 +43,18 @@ export function BrandLogo({
     );
   }
 
+  // Icon-only fallback (favicon / small marks)
   return (
-    <span
-      className={`brand-logo brand-logo--lockup brand-logo--${size} brand-logo--${tone} ${className}`.trim()}
-    >
+    <span className={`brand-logo brand-logo--icon brand-logo--${size} ${className}`.trim()}>
       <span className="brand-logo__glow" aria-hidden />
       <Image
-        src={iconSrc}
-        alt=""
-        width={px}
-        height={px}
+        src="/Logo/hapyzo-icon.svg"
+        alt="Hapyzo"
+        width={dim.icon}
+        height={dim.icon}
         priority={priority}
-        className="brand-logo__mark"
-        aria-hidden
+        className="brand-logo__img"
       />
-      <span className="brand-logo__wordmark">
-        <span className="brand-logo__name">Hapyzo</span>
-        <span className="brand-logo__tag">Technologies</span>
-      </span>
     </span>
   );
 }

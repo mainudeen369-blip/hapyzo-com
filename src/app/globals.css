@@ -134,7 +134,6 @@ img {
   position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 0.7rem;
   flex-shrink: 0;
   isolation: isolate;
 }
@@ -146,129 +145,80 @@ img {
 
 .brand-logo__glow {
   position: absolute;
-  inset: -22% -12% -22% -18%;
-  border-radius: 30%;
-  background: radial-gradient(circle at 30% 40%, rgba(59, 130, 246, 0.45), rgba(124, 58, 237, 0.18), transparent 70%);
-  opacity: 0.9;
-  filter: blur(10px);
+  inset: -18% -8%;
+  border-radius: 24px;
+  background: radial-gradient(circle at 28% 45%, rgba(59, 130, 246, 0.4), rgba(124, 58, 237, 0.14), transparent 72%);
+  opacity: 0.85;
+  filter: blur(12px);
   z-index: -1;
   animation: logoAura 4.5s ease-in-out infinite;
   pointer-events: none;
 }
 
-.brand-logo__img,
-.brand-logo__mark {
+.brand-logo__img {
   width: auto;
   height: auto;
+  max-width: 100%;
   display: block;
+  object-fit: contain;
   transition: transform 0.35s ease, filter 0.35s ease;
 }
 
-.brand:hover .brand-logo__mark,
 .brand:hover .brand-logo__img,
-.brand-logo:hover .brand-logo__mark {
-  transform: scale(1.045);
-  filter: drop-shadow(0 0 14px rgba(99, 102, 241, 0.55));
+.brand-logo:hover .brand-logo__img {
+  transform: scale(1.03);
+  filter: drop-shadow(0 0 16px rgba(96, 165, 250, 0.35));
 }
 
-.brand-logo__wordmark {
-  display: flex;
-  flex-direction: column;
-  gap: 0.12rem;
-  line-height: 1;
-}
-
-.brand-logo__name {
-  font-family: var(--font-display);
-  font-weight: 800;
-  letter-spacing: -0.04em;
-  color: #f8fafc;
-  text-shadow: 0 0 24px rgba(96, 165, 250, 0.22);
-}
-
-.brand-logo__tag {
-  font-family: var(--font-body);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.22em;
-  color: #94a3b8;
-}
-
-.brand-logo--light .brand-logo__name {
-  color: #0b1638;
-  text-shadow: none;
-}
-
-.brand-logo--light .brand-logo__tag {
-  color: #64748b;
-}
-
-.brand-logo--sm .brand-logo__mark,
 .brand-logo--sm .brand-logo__img {
+  width: 168px;
+  height: 52px;
+}
+
+.brand-logo--sm.brand-logo--icon .brand-logo__img {
   width: 30px;
   height: 30px;
 }
 
-.brand-logo--sm .brand-logo__name {
-  font-size: 1.05rem;
-}
-
-.brand-logo--sm .brand-logo__tag {
-  font-size: 0.48rem;
-  letter-spacing: 0.18em;
-}
-
-.brand-logo--md .brand-logo__mark,
 .brand-logo--md .brand-logo__img {
+  width: 220px;
+  height: 68px;
+}
+
+.brand-logo--md.brand-logo--icon .brand-logo__img {
   width: 44px;
   height: 44px;
 }
 
-.brand-logo--md .brand-logo__name {
-  font-size: 1.45rem;
-}
-
-.brand-logo--md .brand-logo__tag {
-  font-size: 0.58rem;
-}
-
-.brand-logo--lg .brand-logo__mark,
 .brand-logo--lg .brand-logo__img {
+  width: 300px;
+  height: 92px;
+}
+
+.brand-logo--lg.brand-logo--icon .brand-logo__img {
   width: 72px;
   height: 72px;
 }
 
-.brand-logo--lg .brand-logo__name {
-  font-size: 2.1rem;
-}
-
-.brand-logo--lg .brand-logo__tag {
-  font-size: 0.72rem;
-}
-
-.brand-logo--hero .brand-logo__mark,
 .brand-logo--hero .brand-logo__img {
+  width: 380px;
+  height: 118px;
+}
+
+.brand-logo--hero.brand-logo--icon .brand-logo__img {
   width: 120px;
   height: 120px;
-}
-
-.brand-logo--hero .brand-logo__name {
-  font-size: 3rem;
-}
-
-.brand-logo--hero .brand-logo__tag {
-  font-size: 0.9rem;
 }
 
 @keyframes logoAura {
   0%,
   100% {
     opacity: 0.55;
-    transform: scale(0.96);
+    transform: scale(0.97);
   }
   50% {
     opacity: 1;
-    transform: scale(1.06);
+    transform: scale(1.05);
   }
 }
 
@@ -289,15 +239,14 @@ img {
 }
 
 .mark--lockup {
-  width: min(420px, 88%);
+  width: min(440px, 90%);
   aspect-ratio: auto;
   min-height: 140px;
   border-radius: 1.25rem;
-  padding: 1.5rem 1.75rem;
+  padding: 1.35rem 1.5rem;
 }
 
-.mark--logo .brand-logo__img,
-.mark--logo .brand-logo__mark {
+.mark--logo .brand-logo__img {
   animation: logoFloat 5.5s ease-in-out infinite;
 }
 
