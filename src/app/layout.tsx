@@ -86,9 +86,22 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const orgJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Hapyzo Technologies",
+    url: "https://www.hapyzo.com",
+    logo: "https://www.hapyzo.com/icon-512.png",
+    sameAs: ["https://www.hapyzo.com"],
+  };
+
   return (
     <html lang="en">
       <body className={`${syne.variable} ${sora.variable} ${montserrat.variable}`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
+        />
         <div className="site-bg" aria-hidden />
         <div className="site-grid" aria-hidden />
         <div className="noise" aria-hidden />
