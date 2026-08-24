@@ -22,13 +22,43 @@ export const metadata: Metadata = {
   },
   description:
     "Hapyzo Technologies designs and ships websites, mobile apps, web platforms, and SaaS products — Property Manager, Speaklo, and custom builds for growing businesses.",
+  keywords: [
+    "Hapyzo Technologies",
+    "Hapyzo",
+    "web development",
+    "mobile apps",
+    "SaaS",
+    "Property Manager",
+    "Speaklo",
+  ],
+  authors: [{ name: "Hapyzo Technologies", url: "https://www.hapyzo.com" }],
+  creator: "Hapyzo Technologies",
+  publisher: "Hapyzo Technologies",
+  alternates: {
+    canonical: "https://www.hapyzo.com",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
   openGraph: {
-    title: "Hapyzo Technologies",
+    title: "Hapyzo Technologies | Websites, Apps & SaaS Products",
     description:
       "World-class digital products — websites, apps, and SaaS — built by Hapyzo Technologies.",
     url: "https://www.hapyzo.com",
     siteName: "Hapyzo Technologies",
     type: "website",
+    locale: "en_IN",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Hapyzo Technologies | Websites, Apps & SaaS Products",
+    description:
+      "Websites, mobile apps, and SaaS products built by Hapyzo Technologies.",
   },
   icons: {
     icon: "/logo.svg",
