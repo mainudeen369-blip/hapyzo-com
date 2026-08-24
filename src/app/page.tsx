@@ -65,26 +65,25 @@ const clients = [
     name: "Friendly Matrimony",
     type: "Website · Mobile app · Web platform",
     note: "Matchmaking product experience across web and Android.",
+    href: "https://friendlymatrimony.com",
   },
   {
     name: "Sarathy Cabs",
     type: "Website · Booking flows",
     note: "Cab brand presence and customer-facing digital journeys.",
+    href: "https://kanyakumarisarathycabs.in",
   },
   {
     name: "Brilliant Matriculation School",
     type: "School website & digital presence",
     note: "Institutional site built for parents, admissions, and trust.",
+    href: "https://bmhss.in",
   },
   {
     name: "JRK Construction",
     type: "Singapore · Company website",
     note: "International construction brand site with a premium footprint.",
-  },
-  {
-    name: "Sri Aradhya Hostel",
-    type: "Property Manager SaaS rollout",
-    note: "Rent, WhatsApp reminders, occupancy, and staff workflows live.",
+    href: "https://jrkconstructionsg.com",
   },
 ];
 
@@ -196,8 +195,7 @@ export default function HomePage() {
               <div className="section-head">
                 <h2 className="display">Clients &amp; delivery</h2>
                 <p>
-                  Real products for real operators — matrimony, mobility, education, construction, and
-                  property operations.
+                  Real products for real operators — matrimony, mobility, education, and construction.
                 </p>
               </div>
             </Reveal>
@@ -210,6 +208,14 @@ export default function HomePage() {
                       <p className="type">{c.type}</p>
                     </div>
                     <p>{c.note}</p>
+                    <a
+                      className="product-link"
+                      href={c.href}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Visit {c.href.replace(/^https?:\/\//, "")} →
+                    </a>
                   </article>
                 </Reveal>
               ))}
@@ -226,7 +232,7 @@ export default function HomePage() {
                   </h2>
                   <p style={{ color: "var(--muted)", margin: "0 0 1.25rem" }}>
                     Collect rent, manage rooms and guests, send branded receipts and SMS, and see occupancy and
-                    revenue without spreadsheet chaos. Proven with operators like Sri Aradhya Hostel.
+                    revenue without spreadsheet chaos.
                   </p>
                   <div className="hero-actions" style={{ marginBottom: 0 }}>
                     <a
