@@ -317,17 +317,6 @@ export const adminProjects: AdminProject[] = [
     hosting: "Confirm",
     shownOnSite: false,
   },
-  {
-    name: "Perception Survey API",
-    status: "live",
-    category: "backend",
-    description: "Survey GraphQL API (workspace) — not a Hapyzo marketing product.",
-    hosting: "Azure / IIS style hosting (confirm env)",
-    mail: "Uses EmailEncrypter / appsettings mail config",
-    stack: ".NET GraphQL",
-    shownOnSite: false,
-    notes: "Work project — listed for your reference only.",
-  },
 ];
 
 export const statusLabel: Record<ProjectStatus, string> = {
