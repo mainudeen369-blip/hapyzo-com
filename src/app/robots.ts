@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://www.hapyzo.com/sitemap.xml",
-    host: "https://www.hapyzo.com",
+    sitemap: "https://hapyzo.com/sitemap.xml",
+    host: "https://hapyzo.com",
   };
 }
