@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="Hapyzo icon">
+  <defs>
+    <linearGradient id="hLeftW" x1="52" y1="20" x2="52" y2="140" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7DD3FC"/>
+      <stop offset="0.35" stop-color="#60A5FA"/>
+      <stop offset="0.7" stop-color="#818CF8"/>
+      <stop offset="1" stop-color="#C4B5FD"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#hLeftW)" d="M24 20h42v50L108 48v38L66 108v32H24V20Z"/>
+  <path fill="#F8FAFC" d="M108 20h42v120h-42V98l-34 22V76l34-22V20Z"/>
+</svg>

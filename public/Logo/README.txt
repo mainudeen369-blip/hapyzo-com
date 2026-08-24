@@ -1,17 +1,10 @@
-HAPYZO TECHNOLOGIES — LOGO PACKAGE
-====================================
+HAPYZO TECHNOLOGIES — LOGO (site working copies)
+================================================
 
-Source of truth (your GPT export):
-  hapyzoLogopng.png / hapyzo-logo-original.png
+Canonical share/poster package lives in:
+  ../FINAL-LOGO/
 
 Website uses:
-  hapyzo-icon.svg          — mark with blue→violet gradient (header/favicon)
-  BrandLogo React lockup   — mark + crisp white “Hapyzo / TECHNOLOGIES” for dark UI
-
-Optional raster lockups:
-  hapyzo-logo-on-dark.png  — full lockup for dark backgrounds
-  hapyzo-logo.png          — full lockup for light backgrounds
-
-Why SVG package looked different:
-  Auto-traced SVGs flattened the gradient and changed the mark/type.
-  Site now rebuilds the polished lockup from the icon + live typography.
+  BrandLogo → hapyzo-logo-on-dark.png (exact wordmark)
+  Icons → hapyzo-icon*.svg
+  Favicons → /favicon.ico, /favicon-48.png, /apple-touch-icon.png (public root)
