@@ -8,12 +8,7 @@ type BrandLogoProps = {
   priority?: boolean;
 };
 
-const sizes = {
-  sm: { icon: 30, lockupW: 168, lockupH: 52 },
-  md: { icon: 44, lockupW: 220, lockupH: 68 },
-  lg: { icon: 72, lockupW: 300, lockupH: 92 },
-  hero: { icon: 120, lockupW: 380, lockupH: 118 },
-} as const;
+const iconPx = { sm: 30, md: 44, lg: 72, hero: 110 } as const;
 
 export function BrandLogo({
   variant = "lockup",
@@ -22,20 +17,19 @@ export function BrandLogo({
   className = "",
   priority = false,
 }: BrandLogoProps) {
-  const dim = sizes[size];
+  const px = iconPx[size];
+  // Dark-site icon keeps the bright gradient mark readable on dark UI
+  const iconSrc = tone === "dark" ? "/Logo/hapyzo-icon-on-dark.svg" : "/Logo/hapyzo-icon.svg";
 
-  // Full lockup = exact PNG (matches your GPT logo)
-  if (variant === "lockup") {
-    const src =
-      tone === "dark" ? "/Logo/hapyzo-logo-on-dark.png" : "/Logo/hapyzo-logo.png";
+  if (variant === "icon") {
     return (
-      <span className={`brand-logo brand-logo--lockup brand-logo--${size} ${className}`.trim()}>
+      <span className={`brand-logo brand-logo--icon brand-logo--${size} ${className}`.trim()}>
         <span className="brand-logo__glow" aria-hidden />
         <Image
-          src={src}
-          alt="Hapyzo Technologies"
-          width={dim.lockupW}
-          height={dim.lockupH}
+          src={iconSrc}
+          alt="Hapyzo"
+          width={px}
+          height={px}
           priority={priority}
           className="brand-logo__img"
         />
@@ -43,18 +37,25 @@ export function BrandLogo({
     );
   }
 
-  // Icon-only fallback (favicon / small marks)
+  // Lockup = mark + crisp white wordmark (no PNG plate / no white box)
   return (
-    <span className={`brand-logo brand-logo--icon brand-logo--${size} ${className}`.trim()}>
+    <span
+      className={`brand-logo brand-logo--lockup brand-logo--${size} brand-logo--${tone} ${className}`.trim()}
+    >
       <span className="brand-logo__glow" aria-hidden />
       <Image
-        src="/Logo/hapyzo-icon.svg"
-        alt="Hapyzo"
-        width={dim.icon}
-        height={dim.icon}
+        src={iconSrc}
+        alt=""
+        width={px}
+        height={px}
         priority={priority}
-        className="brand-logo__img"
+        className="brand-logo__mark"
+        aria-hidden
       />
+      <span className="brand-logo__wordmark">
+        <span className="brand-logo__name">Hapyzo</span>
+        <span className="brand-logo__tag">Technologies</span>
+      </span>
     </span>
   );
 }
