@@ -5,6 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
+      disallow: ["/admin", "/api/admin-login"],
     },
     sitemap: "https://www.hapyzo.com/sitemap.xml",
     host: "https://www.hapyzo.com",

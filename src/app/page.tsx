@@ -2,6 +2,7 @@ import Link from "next/link";
 import { BrandLogo } from "../components/BrandLogo";
 import { Reveal } from "../components/Reveal";
 import { SiteFooter, SiteHeader } from "../components/SiteChrome";
+import { websitePackages } from "../data/packages";
 
 const services = [
   {
@@ -182,6 +183,37 @@ export default function HomePage() {
                     >
                       {item.cta} →
                     </a>
+                  </article>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section" id="packages">
+          <div className="container">
+            <Reveal>
+              <div className="section-head">
+                <h2 className="display">Website packages</h2>
+                <p>
+                  Starter to Business — clear scopes from ₹5,000. Custom apps quoted separately.{" "}
+                  <Link href="/packages" className="product-link">
+                    Full package details →
+                  </Link>
+                </p>
+              </div>
+            </Reveal>
+            <div className="packages-grid packages-grid--home">
+              {websitePackages.map((pkg, i) => (
+                <Reveal key={pkg.id} delay={i * 50}>
+                  <article className={`package-card package-card--compact${pkg.highlight ? " is-hot" : ""}`}>
+                    {pkg.highlight ? <span className="package-hot">Popular</span> : null}
+                    <h3>{pkg.name}</h3>
+                    <p className="package-price">{pkg.priceLabel}</p>
+                    <p className="package-blurb">{pkg.blurb}</p>
+                    <Link href="/packages" className="product-link">
+                      See inclusions →
+                    </Link>
                   </article>
                 </Reveal>
               ))}

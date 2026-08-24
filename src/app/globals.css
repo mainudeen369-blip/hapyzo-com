@@ -748,6 +748,389 @@ img {
   display: none;
 }
 
+/* —— Packages —— */
+.packages-hero {
+  padding-bottom: 0.5rem;
+}
+
+.packages-lead {
+  color: var(--muted);
+  max-width: 36rem;
+  margin: 0.75rem 0 0;
+  line-height: 1.6;
+}
+
+.packages-grid {
+  display: grid;
+  gap: 1.1rem;
+  grid-template-columns: 1fr;
+}
+
+.packages-grid--home {
+  margin-top: 0.5rem;
+}
+
+@media (min-width: 720px) {
+  .packages-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1100px) {
+  .packages-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.package-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  padding: 1.35rem 1.25rem 1.4rem;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  min-height: 100%;
+}
+
+.package-card.is-hot {
+  border-color: rgba(61, 214, 198, 0.45);
+  box-shadow: 0 0 0 1px rgba(61, 214, 198, 0.12);
+}
+
+.package-hot {
+  position: absolute;
+  top: 0.85rem;
+  right: 0.85rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 0.25rem 0.5rem;
+  border-radius: 999px;
+}
+
+.package-card h2,
+.package-card h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+}
+
+.package-price {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+  font-family: var(--font-display);
+  color: var(--gold);
+}
+
+.package-blurb {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.package-pages {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--text);
+  opacity: 0.9;
+}
+
+.package-card ul {
+  margin: 0.25rem 0 0.5rem;
+  padding-left: 1.1rem;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.55;
+  flex: 1;
+}
+
+.package-amc {
+  margin: 0 0 0.75rem;
+  font-size: 0.82rem;
+  color: var(--accent);
+}
+
+.package-card .btn {
+  align-self: flex-start;
+}
+
+.package-card--compact {
+  gap: 0.45rem;
+}
+
+.package-extras {
+  margin-top: 2.5rem;
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+}
+
+.package-extras h3 {
+  margin: 0 0 1rem;
+  font-family: var(--font-display);
+}
+
+.package-addon-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.25rem;
+}
+
+.package-addon-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.package-addon-list strong {
+  color: var(--text);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.package-notes {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+/* —— Admin —— */
+.admin-shell {
+  min-height: 100vh;
+  padding: 2rem 1.15rem 3.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.admin-login {
+  max-width: 380px;
+  margin: 12vh auto 0;
+  padding: 1.75rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.admin-login h1 {
+  margin: 0.5rem 0 0;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+}
+
+.admin-login p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.admin-login label {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.admin-login input,
+.admin-filters input,
+.admin-filters select {
+  width: 100%;
+  padding: 0.7rem 0.85rem;
+  border-radius: 0.7rem;
+  border: 1px solid var(--border);
+  background: rgba(0, 0, 0, 0.35);
+  color: var(--text);
+  font: inherit;
+}
+
+.admin-login form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin-top: 0.5rem;
+}
+
+.admin-error {
+  color: var(--danger) !important;
+  font-size: 0.85rem !important;
+}
+
+.admin-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.admin-top h1 {
+  margin: 0.55rem 0 0.25rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+}
+
+.admin-top p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.admin-filters {
+  display: grid;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+@media (min-width: 720px) {
+  .admin-filters {
+    grid-template-columns: 1.4fr 0.7fr auto;
+    align-items: center;
+  }
+}
+
+.admin-check {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--muted);
+  font-size: 0.88rem;
+  white-space: nowrap;
+}
+
+.admin-count {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin: 0 0 1.25rem;
+}
+
+.admin-section {
+  margin-bottom: 2.25rem;
+}
+
+.admin-section h2 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  margin: 0 0 0.9rem;
+  color: var(--accent);
+}
+
+.admin-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 800px) {
+  .admin-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.admin-card {
+  padding: 1.15rem 1.2rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.admin-card-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.admin-card h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+}
+
+.admin-badge {
+  font-size: 0.68rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.22rem 0.5rem;
+  border-radius: 999px;
+  white-space: nowrap;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.admin-badge.status-demo {
+  background: var(--gold-soft);
+  color: var(--gold);
+}
+
+.admin-badge.status-internal,
+.admin-badge.status-archived {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--muted);
+}
+
+.admin-cat {
+  margin: 0;
+  font-size: 0.78rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.admin-card > p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.admin-dl {
+  margin: 0.35rem 0 0.25rem;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.admin-dl div {
+  display: grid;
+  gap: 0.1rem;
+}
+
+.admin-dl dt {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+}
+
+.admin-dl dd {
+  margin: 0;
+  font-size: 0.86rem;
+  color: var(--text);
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.admin-empty {
+  color: var(--muted);
+  grid-column: 1 / -1;
+}
+
 @media (min-width: 860px) {
   .nav-links {
     display: flex;

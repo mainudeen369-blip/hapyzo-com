@@ -7,6 +7,7 @@ import { BrandLogo } from "./BrandLogo";
 const links = [
   { href: "/#services", label: "Services" },
   { href: "/#products", label: "Products" },
+  { href: "/packages", label: "Packages" },
   { href: "/#work", label: "Work" },
   { href: "/speaklo", label: "Speaklo" },
   { href: "/#contact", label: "Contact" },
@@ -52,6 +53,7 @@ export function SiteFooter() {
           <p>© {new Date().getFullYear()} Hapyzo Technologies. All rights reserved.</p>
         </div>
         <nav>
+          <Link href="/packages">Packages</Link>
           <Link href="/speaklo">Speaklo</Link>
           <a href="https://propertymanager.hapyzo.com/" target="_blank" rel="noreferrer">
             Property Manager
