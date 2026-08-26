@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Syne, Sora, Montserrat } from "next/font/google";
 import "./globals.css";
+
+const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "G-SE1W53DZSK";
 
 const syne = Syne({
   subsets: ["latin"],
@@ -67,8 +70,6 @@ export const metadata: Metadata = {
     description:
       "Websites, mobile apps, and SaaS products built by Hapyzo Technologies.",
   },
-  // Prefer square PNG ≥48px for Google Search favicon eligibility.
-  // Keep /favicon.ico at public root for browsers; do not advertise it as 16x16-only.
   icons: {
     icon: [
       { url: "/favicon-48.png", type: "image/png", sizes: "48x48" },
@@ -98,6 +99,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${syne.variable} ${sora.variable} ${montserrat.variable}`}>
+        <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_ID}');
+          `}
+        </Script>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
