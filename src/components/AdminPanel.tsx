@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import type { AdminProject, ProjectStatus } from "../data/admin-projects";
 import { statusLabel } from "../data/admin-projects";
+import { adminLogoFiles, logoGroupLabel, type LogoGroup } from "../data/admin-logos";
 import { BrandLogo } from "./BrandLogo";
 
 export function AdminLoginForm() {
@@ -99,6 +100,8 @@ export function AdminDashboard({ projects }: { projects: AdminProject[] }) {
         </button>
       </header>
 
+      <LogoDownloads />
+
       <div className="admin-filters">
         <input
           type="search"
@@ -143,6 +146,49 @@ export function AdminDashboard({ projects }: { projects: AdminProject[] }) {
         </div>
       </section>
     </div>
+  );
+}
+
+function LogoDownloads() {
+  const groups: LogoGroup[] = ["lockup", "icon"];
+
+  return (
+    <section className="admin-section admin-logos">
+      <div className="admin-card-head">
+        <h2>Logo downloads</h2>
+        <a className="btn btn-primary" href="/api/admin-logos?group=all">
+          Download all types
+        </a>
+      </div>
+      <p>Latest pack from the Logo folder. Newest file is the site lockup, 24 Aug 2026 15:36.</p>
+      <div className="admin-grid">
+        {groups.map((group) => {
+          const files = adminLogoFiles.filter((item) => item.group === group);
+          return (
+            <article key={group} className="admin-card">
+              <div className="admin-card-head">
+                <h3>{logoGroupLabel[group]}</h3>
+                <a className="btn btn-ghost" href={`/api/admin-logos?group=${group}`}>
+                  Download {logoGroupLabel[group].toLowerCase()}
+                </a>
+              </div>
+              <ul className="admin-logo-list">
+                {files.map((item) => (
+                  <li key={item.file}>
+                    <a href={`/Logo/${item.file}`} download={item.file}>
+                      {item.file}
+                    </a>
+                    <span>
+                      {item.note} · {item.updated}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          );
+        })}
+      </div>
+    </section>
   );
 }
 
